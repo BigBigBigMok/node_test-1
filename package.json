@@ -1,0 +1,26 @@
+{
+  "name": "test_1",
+  "version": "1.0.0",
+  "description": "第一次搭建node服务器",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigBigBigMok/node_test-1.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Mok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BigBigBigMok/node_test-1/issues"
+  },
+  "homepage": "https://github.com/BigBigBigMok/node_test-1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
