@@ -39,8 +39,8 @@ var questions=[
 			}
 			console.log("读取成功，数据为：",data);
 			var fileData = {
-				err_code: 0
-				err_status: 'success',
+				code: 0,
+				status: 'success',
 				data: data
 			}
 			res.status(200),
