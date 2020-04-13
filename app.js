@@ -10,8 +10,8 @@ app.all('*', function(req, res, next) {
    res.header("Content-Type", "application/json;charset=utf-8");
    next();
 });
-
-
+// app.use(express.static(__dirname + '/web')); 
+console.log(__dirname)
 
 var questions=[
 	{
