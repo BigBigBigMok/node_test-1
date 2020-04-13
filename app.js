@@ -1,6 +1,6 @@
 var express=require('./node_modules/express');
 var app = express();
-
+var fs = require('fs')
 //设置跨域访问
 app.all('*', function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
@@ -26,9 +26,26 @@ var questions=[
     }
 ];
     //写个接口123
-    app.get('/123',function(req,res){
+    app.get('/data',function(req,res){
 	    res.status(200),
 	    res.json(questions)
+    });
+    //写个接口123
+    app.get('/text',function(req,res){
+    	fs.readFile("./text.txt","utf-8",(err,data)=>{
+			if(err){
+				console.log("读取失败，错误为：",err);
+				return 
+			}
+			console.log("读取成功，数据为：",data);
+			var fileData = {
+				code: 0
+				status: 'success',
+				data: data
+			}
+			res.status(200),
+	    	res.json(fileData)
+		});	 
     });
 
     //配置服务端口
