@@ -10,6 +10,24 @@ var db = mysql.createConnection({
   port: '3306',                  
   database: 'reji'
 });
+// 执行数据库连接 
+
+connection.connect(function(err){
+	if(err){
+		console.log("链接失败");
+		throw(err)
+	}else{
+		console.log("链接成功");
+		connection.query("CREATE TABLE person(id int,user varchar(255),password varchar(255))", function(err,result){
+			if(err){throw err}else{
+				console.log("创建表成功")
+			}
+		})
+	}
+})
+var sqlstring = "";
+// 创建表
+sqlstring = "Create Table MYTABLE (name VARCHAR(20), sex CHAR(1))"
 console.log(db)
 //设置跨域访问
 app.all('*', function(req, res, next) {
