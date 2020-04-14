@@ -3,12 +3,12 @@ var app = express();
 var fs = require('fs')
 var mysql  = require('mysql');  //导入mysql包
   
-var connection = mysql.createConnection({    
-  host     : 'localhost',      
-  user     : 'root',             
-  password : '123456',      
-  port: '3306',                  
-  database: 'reji'
+var connection = mysql.createConnection({     
+  host     : 'localhost',    
+  user     : 'me',             
+  password : 'secret',      
+  // port: '3306',                  
+  database: 'my_db'
 });
 // 执行数据库连接 
 
