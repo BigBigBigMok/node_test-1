@@ -22,5 +22,8 @@
   "homepage": "https://github.com/BigBigBigMok/node_test-1#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mysql": "^2.18.1"
   }
 }

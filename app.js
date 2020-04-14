@@ -1,6 +1,16 @@
 var express=require('./node_modules/express');
 var app = express();
 var fs = require('fs')
+var mysql  = require('mysql');  //导入mysql包
+  
+var db = mysql.createConnection({    
+  host     : 'localhost',      
+  user     : 'root',             
+  password : '123456',      
+  port: '3306',                  
+  database: 'reji'
+});
+console.log(db)
 //设置跨域访问
 app.all('*', function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
