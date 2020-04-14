@@ -3,7 +3,7 @@ var app = express();
 var fs = require('fs')
 var mysql  = require('mysql');  //导入mysql包
   
-var db = mysql.createConnection({    
+var connection = mysql.createConnection({    
   host     : 'localhost',      
   user     : 'root',             
   password : '123456',      
@@ -28,7 +28,15 @@ connection.connect(function(err){
 var sqlstring = "";
 // 创建表
 sqlstring = "Create Table MYTABLE (name VARCHAR(20), sex CHAR(1))"
-console.log(db)
+connection.query(sqlstring, function (err, results, fields) {
+    if (err) {
+         console.log('[UPDATE ERROR] - ', err.message);
+        return;
+    }
+    console.log('--------------------------CREATE----------------------------');       
+    console.log('CREATE TABLE:', results);        
+    console.log('------------------------------------------------------------\n\n');  
+});
 //设置跨域访问
 app.all('*', function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
